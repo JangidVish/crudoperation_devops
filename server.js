@@ -28,6 +28,10 @@ const todoSchema = new mongoose.Schema({
 
 const Todo = mongoose.model("Todo", todoSchema);
 
+app.get("/", (req, res) => {
+  res.send("Deploy Successful Ho gaya hain");
+});
+
 //Create a new todo
 app.post("/todos", async (req, res) => {
   const newTodo = new Todo(req.body);
