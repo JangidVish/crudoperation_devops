@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -10,9 +11,7 @@ app.use(bodyParser.json());
 
 //Mongoose COnnnect
 mongoose
-  .connect(
-    "mongodb+srv://vishaljangid2004as:Vishal9767@vishal.tlkuemw.mongodb.net/?retryWrites=true&w=majority&appName=Vishal"
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Bhai apka mongodb connect ho chuka hain");
   })
